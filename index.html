@@ -112,7 +112,7 @@
             <button id='btnLocate' class='btn btn-primary btn-block'>Locate</button><br>
             <div id="divProject" class="col-xs-12">
                 <div id="divProjectLabel" class="text-center col-xs-12">
-                    <h4 id="lblProject">Linear Projects</h4>
+                    <h4 id="lblProject">Proyectos lineales</h4>
                 </div>
                 <div id="divProjectError" class="errorMsg col-xs-12"></div>
                 <div id="divFindProject" class="form-group has-error">
@@ -120,7 +120,7 @@
                         <input type="text" id="txtFindProject" class="form-control" placeholder="Project ID">
                     </div>
                     <div class="col-xs-6">
-                        <button id="btnFindProject" class="btn btn-primary btn-block" disabled>Find Project</button>
+                        <button id="btnFindProject" class="btn btn-primary btn-block" disabled>Find Encontrar proyecto</button>
                     </div>
                 </div>
                 <div class="" id="divProjectData"></div>
@@ -206,7 +206,7 @@
             
             $(document).ready(function(){
                 
-                //  ********* Map Initialization ****************
+                //  ********* Inicializa el mapa ****************
                 
                 mymap = L.map('mapdiv', {center:[40.18, -104.83], zoom:11, attributionControl:false});
                 
@@ -227,7 +227,7 @@
                 ctlStyle = L.control.styleEditor({position:'topright'}).addTo(mymap);
                 ctlMeasure = L.control.polylineMeasure().addTo(mymap);
                 
-                //   *********** Layer Initialization **********
+                //   *********** Inicialización de capas**********
                 
                 lyrOSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
                 lyrTopo = L.tileLayer.provider('OpenTopoMap');
@@ -276,7 +276,7 @@
                 
                 lyrGBH = L.geoJSON.ajax('data/wildlife_gbh.geojson', {style:{color:'fuchsia'}}).bindTooltip("GBH Nesting Area").addTo(mymap);
                 
-                // ********* Setup Layer Control  ***************
+                // *********Control de capas  ***************
                 
                 objBasemaps = {
                     "Open Street Maps": lyrOSM,
@@ -297,7 +297,7 @@
                 
                 ctlLayers = L.control.layers(objBasemaps, objOverlays).addTo(mymap);
                 
-                // **********  Setup Draw Control ****************
+                // **********  Control de dibujo ****************
                 
                 ctlDraw = new L.Control.Draw({
                     draw:{
@@ -314,7 +314,7 @@
                     fgpDrawnItems.addLayer(e.layer);
                 });
                 
-                // ************ Location Events **************
+                // ************ Eventos de localización **************
                 
                 mymap.on('locationfound', function(e) {
                     console.log(e);
@@ -332,7 +332,7 @@
                 
             });
 
-            //  ********* BUOWL Functions
+            //  ********* BUOWL Funciones
 
             function styleBUOWL(json){
                 var att = json.properties;
